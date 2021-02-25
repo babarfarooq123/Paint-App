@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="paint-app"></div>
+    <button style="font-size: 15px;" id="zoomIn">+</button>
+    <button style="font-size: 15px;" id="zoomOut">-</button>
+    <!-- <button style="font-size: 15px;" id="saver">save</button> -->
+    <select id="color-selector">
+      <option  value="black">Default</option>
+      <option style="background-color: rgb(92, 191, 176) !important;" value="rgb(92, 191, 176)">Ring</option>
+      <option style="background-color: rgb(191, 190, 82) !important;" value="rgb(191, 190, 82)">Tropozoite</option>
+      <option style="background-color: rgb(191, 107, 73) !important;"  value="rgb(191, 107, 73)">Schizont</option>
+      <option style="background-color: rgb(148, 111, 191) !important;"  value="rgb(148, 111, 191)">Gametozyte</option>
+    </select>
+    <div id="out"></div>
+
+
+    <script src="https://code.jquery.com/jquery-1.11.0.js" integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
