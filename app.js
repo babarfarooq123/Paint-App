@@ -31,8 +31,9 @@
 
 var liner = 1;
 var cx = ''
+var canvas = '';
 function createPaint(parent) {
-    var canvas = elt('canvas', { id: 'paintCanvas' });
+    canvas = elt('canvas', { id: 'paintCanvas' });
     var cx = canvas.getContext('2d');
     var toolbar = elt('div', { class: 'toolbar' });
 
@@ -200,16 +201,12 @@ function sendMessage(image) {
             e = e.replace('"/g','');
             // console.log(e);
             // console.log(typeof(e));
-            document.querySelector(".picturepanel").style.backgroundImage = `url(${e})`
+            
+
+            const context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            document.querySelector(".picturepanel").style.backgroundImage = `url(${e})`;
             alert(e);
-            // e.preventDefault();
-            // console.log("response => " + e);
-            // fetch('http://localhost/getImage').then((res) => {
-            //         console.log('res => ', res);
-            //     }).catch((e) => {
-            //         console.log('error message => ', e.message());
-            //     })
-                // document.getElementById('paintCanvas').style.backgroundImage = `url(${JSON.parse(e)})`;
         }
     })
 
@@ -745,7 +742,21 @@ $(document).ready(function() {
 
 
 window.onload= () =>{
-    fetch("http://localhost:3000/getImage").then((e)=>{
-        console.log(e.body)
-    })
+    // $.ajax({
+    //     type: 'get',
+    //     url: 'http://localhost:3000/back',
+    //     data: {
+    //         'canvas': JSON.stringify({'yes': 'true'})
+    //     },
+    //     success: function(e) {
+    //         e = e.replace('"/g','');
+    //         document.querySelector(".picturepanel").style.backgroundImage = `url(${e})`
+    //         alert(e);
+    //     }
+    // })
+    // fetch('http://localhost:3000/').then((res) => {
+    //     console.log(res);
+    // }).catch((e) => {
+    //     console.log(e);
+    // })
 }
